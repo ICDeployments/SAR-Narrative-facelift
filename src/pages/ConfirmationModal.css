@@ -1,0 +1,81 @@
+/* The semi-transparent background */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3); /* Dimmed background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* The white modal box */
+.modal-content {
+  background: white;
+  padding: 12px 35px;
+  border-radius: 24px; /* Rounded corners like the image */
+  max-width: 620px;
+  height: 200px;
+  width: 90%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* The text styling */
+.modal-content h3 {
+  color: #000048; /* Dark navy color */
+  font-size: 18px;
+  margin-bottom: 50px;
+  line-height: 1.4;
+  font-weight: 400;
+}
+
+/* Button container */
+.modal-actions {
+  display: flex;
+  gap: 25px;
+  justify-content: right;
+  font-family: poppins;
+  font-size: 15px;
+  font-weight: 500;
+
+}
+
+/* Base button styles */
+.btn {
+  padding: 6px 35px;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 120px;
+  border: 1px solid transparent;
+  height: 38px;
+}
+
+/* Cancel button: White background, blue border */
+.btn-secondary {
+  background-color: white;
+   color: #2F78C4;
+   width: 140px;
+  border-color:#6AA2DC;
+  height: 38px;
+
+}
+
+.btn-secondary:hover {
+  background-color: #1e84f8;
+  color: white;
+}
+
+/* Upload button: Solid blue background */
+.btn-primary {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #2563eb;
+}

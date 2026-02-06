@@ -1,0 +1,216 @@
+/* --- Global & Existing Styles --- */
+
+.ai-header-title {
+  font-size: 18px;
+  font-weight: 500;
+  color: #000048;
+  font-family: roboto;
+  letter-spacing: 1px;
+  position: relative;
+  margin-top: -1px;
+}
+
+/* Styling for the filename part */
+.process-stream-filename {
+  font-size: 0.8em;
+  color: #f90c14;
+  margin-left: 3px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+/* Styling for the static label part */
+.process-stream-label {
+  color: #000048; /* deep navy */
+  font-family: roboto;
+  font-size: 0.90em; /* Example: The base font size */
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* Add these lines to define the container for the progress bar */
+.progress-bar-sidebar {
+  height: 8px; /* Give the bar a visible height */
+  background-color: #e0e0e0; /* A light grey background */
+  border-radius: 4px;
+  overflow: hidden;
+  margin: 8px 0; /* Add some margin for spacing */
+}
+
+.progress-fill-sidebar {
+  /* Keep the existing style and add height: 100% to fill the container */
+  background-color: rgb(9, 244, 29);
+  height: 100%; /* Important: makes the fill take the container's height */
+  transition: width 0.3s ease; /* Optional: for a smooth filling animation */
+}
+
+.ai-activity-panel {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  padding: 0;
+}
+
+/*  container for the Status Box and the Commentary Title */
+.ai-fixed-header {
+  /* The fixed content takes up only the space it needs */
+  flex-shrink: 0;
+  /* padding: 0 18px 0 18px; IMPORTANT: Apply horizontal padding here */
+}
+
+.live-log-stream-scroll {
+  flex-grow: 1;
+  overflow-y: auto; /* Enable vertical scrolling */
+  padding: 0 18px 10px 18px; /* Apply padding to prevent logs from hitting the edge */
+}
+
+.activity-feed {
+  margin-left: 0;
+  padding: 0;
+}
+
+.activity-title {
+  margin-top: 5px;
+}
+
+.activity-time {
+  font-family: roboto;
+  font-size: 1.05em;
+  letter-spacing: 1px;
+  color: #000048;
+  margin-top: 6px;
+  
+}
+
+/* The main container for an Agent's logs */
+.agent-block {
+    margin-bottom: 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden; 
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+/* Base style for the Agent Header Bar (Title, Description, and Progress Bar) */
+.agent-header-bar {
+    position: relative;
+    padding: 10px 15px;
+    background-color: #f7f7f7; /* Light grey base for all */
+    border-bottom: 1px solid #e0e0e0;
+    overflow: hidden; 
+}
+
+/* Green styling for Active/Completed Blocks matching screenshot */
+.agent-block.active .agent-header-bar,
+.agent-block.completed .agent-header-bar {
+    background-color: #e5f5e5; /* Very light green background */
+    border-left: 5px solid #4CAF50; /* Green left border/sidebar */
+    border-bottom: 1px solid #4CAF50;
+    padding-left: 10px; /* Adjust padding due to the 5px border */
+}
+
+/* Progress Fill Bar (sits behind the text) */
+.agent-progress-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: rgba(76, 175, 80, 0.2); /* Semi-transparent green */
+    transition: width 0.4s ease-out;
+    z-index: 0; 
+}
+
+/* Text row that sits on top of the progress fill */
+.agent-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative; 
+    z-index: 1;
+}
+
+.agent-title {
+    font-size: 1.0em;
+    font-weight: bold;
+    color: #333; 
+    letter-spacing: 0.5px;
+}
+.agent-block.completed .agent-title {
+    color: #4CAF50; 
+}
+.agent-block.active .agent-title {
+    color: #000048; 
+}
+
+.agent-percentage {
+    font-size: 0.9em;
+    font-weight: 600;
+    color: #4CAF50;
+}
+
+.agent-description {
+    font-size: 0.85em;
+    color: #666;
+    margin-top: 2px;
+    position: relative;
+    z-index: 1;
+}
+.agent-block.active .agent-description,
+.agent-block.completed .agent-description {
+    color: #000048; 
+}
+
+
+/* --- Step List Styles (The bullet points) --- */
+
+.agent-steps-list {
+    list-style: none; 
+    padding: 10px 15px 10px 15px;
+    margin: 0;
+}
+
+.step-item {
+    display: flex;
+    align-items: flex-start;
+    padding: 4px 0;
+    font-size: 0.9em;
+    color: #666;
+    font-family: Arial, sans-serif;
+    line-height: 1.4;
+}
+
+.step-marker {
+    display: inline-block;
+    width: 15px;
+    margin-right: 5px;
+    font-weight: bold;
+    color: #ccc; 
+}
+
+.step-item.active .step-marker {
+    color: #000048; 
+}
+
+.step-item.complete .step-marker {
+    color: #4CAF50; 
+}
+
+.step-item.final .step-marker {
+    font-size: 1.1em; 
+}
+/* Ensure the final step text is visible */
+.step-item.final .step-text {
+    color: #4CAF50;
+    font-weight: 600;
+}
+
+.step-item.error {
+    color: #f44336; 
+}
+.step-item.error .step-marker {
+    color: #f44336; 
+}
+
+
+/* --- Additional Styles (if needed) --- */
+

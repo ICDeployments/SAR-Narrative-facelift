@@ -1,0 +1,1302 @@
+.report-generator-container {
+    padding: 10px 24px;
+    margin-left: 28px;
+    background-color: #f7f7f9; /* Light gray background */
+    /* min-height: 100vh; */
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+/* Container for the back link and New Upload button */
+.header-top-row {
+    display: flex;
+    justify-content: space-between; /* Pushes Back link left and Upload button right */
+    align-items: center;
+    width: 100%;
+    margin-bottom: 15px; /* Space above the main heading */
+}
+
+.back-link-container {
+    display: inline-flex;
+    display: flex;
+    align-items: center;
+    font-family: poppins;
+
+}
+
+.back-to-dashboard-link{
+      color: #53565A;
+
+    text-decoration: none;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+
+/* Styling for the New Upload Button */
+.new-upload-button {
+    background-color: #f7f7f7; /* Light background */
+    color: #2F78C4; /* Same blue as the link */
+    border: 1px solid #6AA2DC;
+    margin-left: -10px;
+    padding: 8px 15px;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    transition: background-color 0.2s, border-color 0.2s;
+    font-family: poppins;
+    gap: 10px;
+    
+}
+
+.new-upload-button:hover {
+    background-color: #e0e0e0;
+    color: #fff;
+    border-color: #2F78C4;
+    border: 1px solid #6AA2DC;
+}
+
+/* Ensure the main heading starts below the top row */
+.report-title {
+    /* Ensure the title has adequate top margin if the header-top-row is removed in other states */
+    margin-top: 0; 
+    font-family: poppins;
+}
+
+.report-title {
+    font-size: 17px;
+    font-weight: 600;
+    color: #000048;
+    margin-bottom: -10px;
+}
+ 
+.report-subtitle {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 10px;
+}
+ 
+/* --- Grid Structure --- */
+.report-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr; /* Approx 1/3 and 2/3 column layout */
+    gap: 24px;
+}
+ 
+/* Responsive adjustment for smaller screens */
+@media (max-width: 1024px) {
+    .report-grid {
+        grid-template-columns: 1fr;
+    }
+}
+ 
+.panel-title {
+    font-size: 17px;
+    font-weight: 500;
+    color: #000048;
+    /* margin-bottom: 16px; */
+    font-family: poppins;
+    display: flex;
+    justify-content: space-between;
+}
+ 
+/* --- Transaction Log Panel (Left) --- */
+.transaction-log-panel {
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+      max-height: 77vh;
+    overflow-y: auto;
+    padding: 5px 16px;
+}
+
+.transaction-log-panel::-webkit-scrollbar {
+  width: 4px; 
+  height: 8px;
+  background-color: transparent; /* Make the background transparent */
+}
+
+/* 3. Style the scrollbar THUMB to be transparent by default */
+.transaction-log-panel::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: 4px;
+}
+
+/* 4. Show the scrollbar thumb only on HOVER */
+.transaction-log-panel::-webkit-scrollbar-thumb {
+  /* Change the color to make it visible on hover */
+  background-color: #CFCFCF;
+}
+
+.sar-container::-webkit-scrollbar-thumb:hover {
+  background-color: #CFCFCF;
+}
+
+ 
+.transaction-count {
+    font-size: 14px;
+    font-weight: normal;
+    color: #999;
+    margin-left: 8px;
+}
+
+.flex-details{
+    display: flex;
+    flex-direction: column;
+    color: #000048;
+}
+
+.detail-value{
+    color: #000048;
+}
+
+.reason-section{
+    margin-top: -10px;
+    font-size: 15px;
+}
+ 
+.transaction-card {
+    padding: 8px 16px;
+    margin-bottom: 16px;
+    background-color: white;
+    border: 1px solid #d0e7ff;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    font-family: poppins;
+}
+
+.transaction-card.active {
+  background-color: #EAFFE8; 
+  border: 1px solid #d0e7ff; 
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); 
+}
+ 
+.transaction-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* margin-bottom: 8px; */
+    
+}
+ 
+.party-id {
+    font-size: 14px;
+    /* font-weight: 600; */
+    color: #333;
+    font-family: poppins;
+    /* margin-left: -10vw; */
+}
+.party-id-no{
+    font-size: 14px;
+    font-weight: 600;
+    color: #000048;
+    font-family: poppins;
+
+}
+ 
+.status-badge {
+    font-size: 11px;
+    font-weight: 500;
+    color: #2563eb; /* Blue text */
+    background-color: #dbeafe; /* Lighter blue background */
+    padding: 2px 8px;
+    border-radius: 9999px; /* Pill shape */
+}
+ 
+.transaction-details{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+ 
+.transaction-details p {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.5;
+}
+ 
+.transaction-details strong {
+    color: #333;
+    font-weight: 500;
+}
+.account-holder-text {
+    color: #000048;
+}
+ 
+.amount-text{
+    color: #000048;
+}
+ 
+ 
+.reason-text {
+    font-style: roboto;
+    font-size: 14px;
+    color: #000048;
+ 
+}
+ 
+/* --- Agent Activity Panel (Right) --- */
+.agent-activity-panel {
+    box-sizing: border-box;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    max-height: 80vh;
+    overflow-y: scroll;
+    padding: 5px 16px;
+    /* position: relative; */
+    height: 100%;
+    /* overflow: -moz-scrollbars-none; */
+}
+
+/* 2. Hide the scrollbar by default */
+.agent-activity-panel::-webkit-scrollbar {
+  width: 7px; 
+  /* height: 50px; */
+  border-radius: 15px;
+  background-color: #CFCFCF;
+}
+
+/* 3. Style the scrollbar THUMB to be transparent by default */
+.agent-activity-panel::-webkit-scrollbar-thumb {
+  background-color: transparent;
+  border-radius: 4px;
+}
+
+/* 4. Show the scrollbar thumb only on HOVER */
+.agent-activity-panel:hover::-webkit-scrollbar-thumb {
+  /* Change the color to make it visible on hover */
+  background-color: #CFCFCF;
+}
+
+/* Optional: Make the thumb slightly darker when actively dragging/scrolling */
+.agent-activity-panel::-webkit-scrollbar-thumb:hover {
+  background-color: #CFCFCF;
+}
+ 
+.activity-subtitle {
+    font-size: 14px;
+    color: #666;
+    margin-top: -14px;
+    /* margin-bottom: 5px; */
+}
+ 
+/* Progress Bar */
+.progress-container {
+    display: flex;
+    align-items: center;
+    /* margin-bottom: 24px; */
+}
+ 
+.progress-status {
+    font-size: 14px;
+    font-weight: 500;
+    color: #555;
+    margin-right: 12px;
+}
+ 
+.progress-percentage {
+    font-size: 14px;
+    font-weight: bold;
+    color: #2563eb; /* Blue color */
+    margin-right: 8px;
+}
+ 
+.progress-bar-bg {
+    flex-grow: 1;
+    background-color: #e5e7eb; /* Light gray background */
+    border-radius: 9999px;
+    height: 10px;
+    overflow: hidden;
+}
+ 
+.progress-bar-fill {
+    height: 100%;
+    background-color: #3b82f6; /* Blue fill color */
+    border-radius: 9999px;
+    transition: width 0.7s ease-out; /* Smooth transition */
+}
+ 
+.progress-bar-fill.finished {
+    background-color: #10b981; /* Green when finished */
+}
+ 
+/* Agent Cards */
+.agent-activity-card {
+    padding: 16px;
+    margin-bottom: 16px;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+    background-color: #fff; /* Default background */
+    border: 1px solid #e5e7eb;
+}
+ 
+/* State: Pending/Not yet started */
+.agent-activity-card.pending .agent-title,
+.agent-activity-card.pending .agent-description {
+    color: #b0b0b0; /* Light gray for pending */
+}
+ 
+/* State: Completed */
+.agent-activity-card.completed {
+    background-color: #f9f9fb; /* Slightly darker than default white */
+    border-color: #e5e7eb;
+}
+.agent-activity-card.completed .agent-title,
+.agent-activity-card.completed .agent-description {
+    color: #333;
+}
+ 
+/* State: Active/Processing */
+.agent-activity-card.active {
+    background-color: #f0fff4; /* Very light green background */
+    border: 1px solid #a7f3d0; /* Light green border */
+    box-shadow: 0 4px 6px rgba(16, 185, 129, 0.1); /* Subtle green shadow */
+}
+ 
+.agent-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 4px;
+    color: #1f2937;
+}
+ 
+.agent-description {
+    font-size: 14px;
+    color: #4b5563;
+    margin-bottom: 12px;
+}
+ 
+.agent-task-list {
+    list-style-type: none; /* Remove default bullets */
+    padding-left: 0;
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.6;
+}
+ 
+.agent-task-list li {
+    padding-left: 1.5em; /* Space for custom bullet */
+    position: relative;
+    color: #666;
+    opacity: 0.6;
+    transition: all 0.3s ease-in-out;
+}
+ 
+/* Custom bullet point */
+.agent-task-list li::before {
+    content: "\2022"; /* Bullet character */
+    color: #666; /* Default bullet color */
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+}
+ 
+/* Task: Currently Active */
+.current-task {
+    font-weight: 600;
+    color: #1f2937; /* Dark text for emphasis */
+    opacity: 1;
+}
+.current-task::before {
+    color: #22c55e; /* Green bullet for current task */
+}
+ 
+/* Task: Completed */
+.completed-task {
+    color: #10b981;
+    opacity: 1;
+}
+.completed-task::before {
+    content: "\2713"; /* Checkmark character */
+    color: #10b981; 
+}
+ 
+/* Error Message */
+.error-message {
+    padding: 16px;
+    margin-bottom: 16px;
+    font-size: 14px;
+    color: #b91c1c; /* Dark red text */
+    background-color: #fee2e2; /* Light red background */
+    border-radius: 8px;
+    border: 1px solid #f87171;
+}
+ 
+.error-prefix {
+    font-weight: 600;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* Inside your ReportGen.css */
+
+/* General Status Badge Styling */
+.status-badge {
+   font-size: 11px;
+    font-weight: 500;
+    color: #000048; /* Blue text */
+    background-color: #dbeafe; /* Lighter blue background */
+    padding: 2px 8px;
+    border-radius: 9999px; /* Pill shape */
+}
+
+.status-badge.completed {
+   font-size: 11px;
+    font-weight: 500;
+    color: #2563eb; /* Blue text */
+    background-color: #dbeafe; /* Lighter blue background */
+    padding: 2px 8px;
+    border-radius: 9999px; /* Pill shape */
+}
+
+/* 1. Processing (Already existing/from screenshot) */
+.status-badge.processing {
+    background-color: #007bff;
+    color: white;
+    font-size: 11px;
+}
+
+/* 2. Pending (New) */
+.status-badge.pending {
+    background-color: #ffc107; /* Yellow/Amber for waiting/pending */
+    color: #333;
+}
+
+/* 4. Failed */
+.status-badge.failed {
+    background-color: #dc3545; /* Red for failure */
+    color: white;
+}
+
+/* Report Display Container */
+.sar-report-display {
+    /* position: relative; /* Needed for positioning the Edit button */
+    /* padding: 10px 0; */ 
+    padding-bottom: 70px; 
+    /* If you restricted the height of the report display: */
+    height: calc(100% - 150px); /* Adjust this calculation */
+}
+
+/* Edit Button Styling */
+.btn-edit {
+    position: absolute;
+    top: 25px; /* Adjust as needed */
+    right: 0px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.2s;
+    z-index: 10; /* Ensure it's above the pre tag */
+}
+
+.btn-edit:hover {
+    background-color: #0056b3;
+}
+
+/* Textarea in Edit Mode */
+.report-textarea {
+    width: 100%;
+    min-height: 500px; /* Give it a good height */
+    padding: 15px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 13px;
+    line-height: 1.4;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    resize: vertical;
+    white-space: pre; /* Ensure proper report formatting in textarea */
+}
+
+/* Save/Cancel Actions Container */
+.report-actions {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
+
+/* Save/Cancel Button Styling */
+.report-actions .btn {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+
+.btn-save {
+    background-color: #28a745;
+    color: white;
+}
+
+.btn-save:hover {
+    background-color: #1e7e34;
+}
+
+.btn-cancel {
+    background-color: #dc3545;
+    color: white;
+}
+
+.btn-cancel:hover {
+    background-color: #bd2130;
+}
+
+.sar-heading{
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    color: #000048;
+}
+
+
+
+/* --- Edit Report Button (Read-Only View) --- */
+/* Edit Button Styling (adjust as needed) */
+.edit-report-button {margin-top: -8.5vh;
+    height: 32px;
+    width: 108px;
+    background-color: #f0f0f0;
+    color: #2F78C4;
+    border: 1px solid #2F78C4;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: background-color 0.2s;
+    font-family: poppins;
+}
+
+.edit-report-button:hover {
+    background-color: #e0e0e0;
+}
+
+/* Header for the report panel to place the button on the right */
+.report-display-header {
+    display: flex;
+    justify-content: space-between; /* Pushes the button to the right */
+    align-items: center;
+    padding-right: 10px;
+    /* margin-top: -3vh; */
+}
+
+.report-editor-actions{
+    display: flex;
+    gap: 10px;
+}
+/* Editor actions (Save/Cancel) */
+/* .report-editor-actions-header {
+    display: flex;
+    gap: 10px;
+    margin-top: -9vh;
+} */
+
+.report-actions-bar-bottom {
+    /* Position the bar at the bottom of the right column (agent-activity-panel) */
+    position: sticky; /* Make it sticky */
+    bottom: 0; /* Stick to the bottom */
+    z-index: 10;
+    
+    /* Layout and Aesthetics */
+    display: flex;
+    justify-content: flex-end; /* Push buttons to the right */
+    gap: 10px;
+    padding: 14px 0px;
+    background-color: white; /* Match panel background */
+    border-top: 1px solid #ccc; /* Optional separator line */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.05); /* Optional subtle shadow */
+}
+
+.save-button{
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-family: poppins;
+    
+}
+
+ .cancel-button {
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-family: poppins;
+    
+}
+
+.save-button {
+    background-color:#2F78C4;
+    color: white;
+}
+
+.icon-wrapper{
+    background-color:#2F78C4 ;
+}
+
+.cancel-button {
+    background-color: white;
+    color:  #2F78C4;
+    border: 1px solid #2F78C4;
+}
+
+.save-icon-image{
+    width: 20px;
+    height: 20px;
+}
+
+/* Textarea for editing */
+.report-editor-textarea {
+    width: 100%;
+    height: 100%; /* Ensure good viewing area */
+    padding: 15px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+    line-height: 1.5;
+    resize: vertical;
+    overflow-y: auto;
+}
+
+
+.sar-report-container {
+    /* position: relative;  Needed for positioning the Edit button */
+    /* Set a max width or padding for the main container */
+    max-width: 900px; 
+    margin: 0 auto;
+}
+
+
+
+.sar-content-table {
+    width: 100%;
+    /* Remove all default table borders */
+    border-collapse: collapse; 
+    font-family: poppins;;
+    /* Use a fixed-width font to mimic the look of the images */
+}
+
+.sar-content-table, .sar-data-row, .sar-key-cell, .sar-separator-cell, .sar-value-cell {
+    /* No padding, no border on cells or rows */
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sar-data-row {
+    line-height: 1.5; /* Spacing between rows */
+}
+
+.sar-key-cell {
+    /* Align keys to the left */
+    text-align: left; 
+    /* Keys should take up a defined amount of space */
+    width: 200px; /* Adjust this value to control the key column width */
+    font-weight: normal; /* Keep key text normal */
+}
+
+.sar-separator-cell {
+    /* The colon column */
+    width: 10px; 
+    text-align: center;
+}
+
+.sar-value-cell {
+    /* Values take up the remaining space */
+    text-align: left;
+    white-space: pre-wrap; /* Allows the content to wrap if it's long */
+}
+
+.section-divider {
+    /* Style for the <hr> between sections */
+    margin: 15px 0;
+    border: 0;
+    /* border-top: 1px solid #ccc; */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.sar-content-table, .sar-data-row, .sar-key-cell, .sar-separator-cell, .sar-value-cell {
+    /* No padding, no border on cells or rows */
+    border: none;
+    padding-left: 2px;
+    margin: 0;
+}
+
+.sar-data-row {
+    line-height: 1.5; /* Spacing between rows */
+}
+
+/* --- Default Styles (for PART B and C) --- */
+.sar-key-cell {
+    /* Align keys to the left */
+    text-align: left; 
+    /* Keys should take up a defined amount of space (e.g., 200px) */
+    width: 200px; 
+    font-weight: normal; 
+}
+
+.sar-separator-cell {
+    /* The colon column */
+    width: 10px; 
+    text-align: center;
+}
+
+.sar-value-cell {
+    /* Values take up the remaining space */
+    text-align: left;
+    white-space: pre-wrap; /* Allows the content to wrap if it's long */
+}
+
+
+/* --- PART A Specific Styles (2 key-value pairs per row) --- */
+.sar-key-cell-part-a {
+    /* Set key width for Part A (e.g., 20% of the row) */
+    color: #53565A;
+    width: 20%; 
+    max-width: 20%;
+    min-width: 120px; /* Ensure keys have enough space to not wrap too much */
+}
+
+.sar-value-cell-part-a {
+    /* Set value width for Part A (e.g., 30% of the row) */
+    color: #000048;
+    width: 30%; 
+    max-width: 30%;
+}
+
+/* Empty cells for the last item in an odd-numbered list in Part A */
+.sar-key-cell-empty {
+    width: 20%;
+}
+.sar-separator-cell-empty {
+    width: 10px;
+}
+.sar-value-cell-empty {
+    width: 30%;
+}
+
+
+.sar-full-content-cell {
+    /* Ensures paragraphs/non-key content spans the full width of the table */
+    text-align: left;
+    /* Use colSpan="6" for Part A rows, and colSpan="3" for others. */
+    /* No specific width needed here, as colSpan handles it. */
+    color: #000048;
+    font-size: 15px;
+    padding-left: 10px;
+    font-family: poppins;
+}
+
+.section-divider {
+    /* Style for the <hr> between sections */
+    margin: 10px 0;
+    border: 0;
+    /* border-top: 1px solid #ccc; */
+}
+
+
+
+
+
+
+
+
+
+
+/* Styling for the left panel card when the report has been fully viewed */
+.transaction-card.completed-viewed {
+    /* Optional: Slight border or shadow change to indicate review */
+    border: 1.2px solid #BDFFB6; 
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5); 
+
+}
+
+.status-tick-icon {
+    margin-right: 5px; /* Space between tick and 'Party ID' text */
+    flex-shrink: 0;
+}
+
+.party-info-group {
+    display: flex; /* Make the group a flex container */
+    align-items: center; /* Vertically align the tick and the text */
+}
+
+.tick-box {
+    color: white;
+    background-color: #2DB81F; 
+    width: 17px;
+    height: 18px;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.view-report-link {
+    color: #2F78C4; 
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+
+ .sar-report-display.scrollable-content {
+    overflow-y: auto; 
+    padding: 10px;
+} 
+
+.sar-report-display.scrollable-content::-webkit-scrollbar,
+.report-editor-textarea::-webkit-scrollbar {
+    width: 8px; 
+    height: 8px;
+}
+
+/* Scrollbar Track */
+.sar-report-display.scrollable-content::-webkit-scrollbar-track,
+.report-editor-textarea::-webkit-scrollbar-track {
+    background: #F5F5F5;
+    border-radius: 10px;
+}
+
+/* Scrollbar Thumb (Handle) */
+.sar-report-display.scrollable-content::-webkit-scrollbar-thumb,
+.report-editor-textarea::-webkit-scrollbar-thumb {
+    background-color: #A9A9A9;
+    border-radius: 10px;
+    border: 2px solid #F5F5F5; 
+}
+
+/* Scrollbar Thumb on Hover */
+.sar-report-display.scrollable-content::-webkit-scrollbar-thumb:hover,
+.report-editor-textarea::-webkit-scrollbar-thumb:hover {
+    background-color: #808080;
+}
+
+/* Styling for the Download Report Bar */
+.download-actions-bar-bottom {
+    position: sticky;
+    bottom: 0;
+    background-color: #fff; /* White background to cover scrolling content */
+    border-top: 1px solid #e0e0e0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+    margin-top: 10px; /* Space above the bar */
+}
+
+.selection-info {
+    font-size: 16px;
+    /* font-weight: bold; */
+    color: #2F78C4;
+}
+
+.download-report-button {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #2F78C4;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 500;
+    /* width: 206px; */
+    font-family: poppins;
+    transition: background-color 0.2s;
+    gap: 8px;
+}
+
+.download-report-button:hover {
+    background-color: #0056b3;
+}
+/* Ensure the icon image is styled correctly */
+.download-report-button .icon-wrapper {
+    margin-right: 8px;
+}
+
+.top-bar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.download-image{
+    margin-top: -2px;
+    width: 20px;}
+
+
+    /* Responsive adjustments for  larger screens */
+    @media screen and (min-width: 2500px) {
+    /* Main Container & Layout */
+    .report-generator-container {
+        padding: 40px 80px;
+        margin-left: 0; /* Center it for projector view */
+    }
+
+    .report-grid {
+        gap: 60px; /* More breathing room between panels */
+    }
+
+    /* Header & Buttons */
+    .report-title { font-size: 42px !important; margin-bottom: 10px; }
+    .report-subtitle { font-size: 24px !important; margin-bottom: 30px; }
+    
+    .back-to-dashboard-link { font-size: 22px; }
+    .new-upload-button { 
+        padding: 20px 40px; 
+        font-size: 24px; 
+        border-radius: 8px; 
+    }
+}
+
+@media screen and (min-width: 2500px) {
+    .transaction-log-panel, .agent-activity-panel {
+        padding: 20px 32px;
+        border-width: 2px;
+    }
+
+    .panel-title { font-size: 32px !important; margin-bottom: 24px; }
+    .transaction-count { font-size: 24px; }
+
+    /* Cards inside the log */
+    .transaction-card {
+        padding: 24px;
+        margin-bottom: 30px;
+        border-width: 2px;
+    }
+
+    .party-id, .party-id-no, .transaction-details p, .reason-text {
+        font-size: 22px !important;
+    }
+
+    .status-badge {
+        font-size: 18px !important;
+        padding: 6px 16px;
+    }
+
+    /* Tick Icon/Box */
+    .tick-box {
+        width: 30px;
+        height: 30px;
+        font-size: 20px;
+    }
+}
+
+@media screen and (min-width: 2500px) {
+    .progress-bar-bg { height: 24px; }
+    .progress-status, .progress-percentage { font-size: 24px; }
+    
+    .agent-title { font-size: 30px; }
+    .agent-description { font-size: 22px; }
+    .agent-task-list { font-size: 22px; }
+    
+    /* Error Messages */
+    .error-message { font-size: 24px; padding: 30px; }
+}
+
+@media screen and (min-width: 2500px) {
+    .sar-key-cell {
+        width: 400px; /* Double the width from 200px */
+        font-size: 24px;
+    }
+
+    .sar-value-cell, .sar-full-content-cell {
+        font-size: 24px !important;
+    }
+
+    .sar-data-row {
+        line-height: 2.0; /* Increased for readability */
+    }
+
+    /* Edit/Save/Download Bars */
+    .download-actions-bar-bottom, .report-actions-bar-bottom {
+        padding: 30px 40px;
+    }
+
+    .download-report-button, .save-button, .cancel-button {
+        font-size: 28px;
+        padding: 20px 45px;
+    }
+    
+    .selection-info { font-size: 28px; }
+    
+    /* Edit Report Button */
+    .edit-report-button {
+        height: 60px;
+        width: 200px;
+        font-size: 22px;
+    }
+}
+
+/* --- 1. Large Laptops / Standard Desktops (1600px+) --- */
+@media screen and (min-width: 1600px) {
+    .report-title { font-size: 22px !important; }
+    .report-subtitle { font-size: 16px; }
+    
+    .transaction-log-panel, .agent-activity-panel {
+        max-height: 82vh; /* Use more vertical space */
+    }
+
+    .sar-key-cell { width: 250px; font-size: 16px; }
+    .sar-value-cell, .sar-full-content-cell { font-size: 16px !important; }
+    
+    .transaction-card .party-id-no { font-size: 16px; }
+}
+
+/* --- 2. High-Res Monitors / QHD (1920px - 2100px) --- */
+@media screen and (min-width: 1920px) {
+    .report-generator-container { padding: 20px 40px; }
+    
+    .report-title { font-size: 28px !important; }
+    .report-subtitle { font-size: 18px; }
+
+    /* Make the grid gap wider */
+    .report-grid { gap: 40px; }
+
+    /* Increase card sizing */
+    .transaction-card { padding: 15px 20px; }
+    .party-id, .party-id-no, .transaction-details p { font-size: 18px !important; }
+    
+    .sar-key-cell { width: 300px; font-size: 18px; }
+    .sar-value-cell, .sar-full-content-cell { font-size: 18px !important; }
+    
+    .status-badge { font-size: 14px !important; }
+}
+
+/* --- 3. Ultra-Wide / 4K Desktop (2100px+) --- */
+@media screen and (min-width: 2100px) {
+    .report-generator-container { padding: 30px 60px; }
+
+    .report-title { font-size: 34px !important; }
+    .report-subtitle { font-size: 20px; }
+
+    /* Scale the action buttons */
+    .new-upload-button, .download-report-button {
+        padding: 12px 24px;
+        font-size: 20px;
+    }
+
+    .agent-title { font-size: 22px; }
+    .agent-description, .agent-task-list { font-size: 18px; }
+
+    /* Table specifics */
+    .sar-key-cell { width: 350px; font-size: 20px; }
+    .sar-value-cell, .sar-full-content-cell { font-size: 20px !important; }
+    .sar-data-row { line-height: 1.8; }
+}
+
+/* --- 1. Large Laptops (1600px+) --- */
+@media screen and (min-width: 1600px) {
+    .transaction-log-panel {
+        padding: 10px 20px;
+    }
+    
+    .transaction-card {
+        padding: 12px 20px;
+        margin-bottom: 20px;
+    }
+
+    .party-id-no { font-size: 16px; }
+    .party-id, .reason-text, .transaction-details p { font-size: 15px; }
+    
+    .status-badge { font-size: 12px; padding: 3px 10px; }
+    
+    .tick-box { width: 20px; height: 21px; font-size: 13px; }
+}
+
+/* --- 2. High-Res Monitors / QHD (1920px+) --- */
+@media screen and (min-width: 1920px) {
+    .transaction-log-panel {
+        padding: 15px 24px;
+    }
+
+    .transaction-card {
+        padding: 18px 24px;
+        margin-bottom: 24px;
+        border-width: 1.5px; /* Thicker border for better definition */
+    }
+
+    .party-id-no { font-size: 18px; }
+    .party-id, .reason-text, .transaction-details p { font-size: 17px; }
+
+    .status-badge { font-size: 14px; padding: 4px 12px; }
+
+    .tick-box { width: 24px; height: 25px; font-size: 15px; }
+}
+
+/* --- 3. Ultra-Wide / 4K Desktop (2100px+) --- */
+@media screen and (min-width: 2100px) {
+    .transaction-log-panel {
+        padding: 20px 30px;
+    }
+
+    .transaction-card {
+        padding: 22px 28px;
+        margin-bottom: 28px;
+        border-width: 2px;
+    }
+
+    .party-id-no { font-size: 20px; }
+    .party-id, .reason-text, .transaction-details p { font-size: 19px; }
+
+    .status-badge { font-size: 16px; padding: 5px 14px; }
+
+    .tick-box { width: 28px; height: 29px; font-size: 17px; }
+}
+
+/* --- 4. Projector / Massive Displays (2500px+) --- */
+@media screen and (min-width: 2500px) {
+    .transaction-log-panel {
+        padding: 30px 40px;
+    }
+
+    .transaction-card {
+        padding: 30px 35px;
+        margin-bottom: 35px;
+        border-width: 2.5px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    }
+
+    .party-id-no { font-size: 24px; }
+    .party-id, .reason-text, .transaction-details p { font-size: 22px; }
+
+    .status-badge { font-size: 18px; padding: 8px 18px; }
+
+    .tick-box { 
+        width: 36px; 
+        height: 38px; 
+        font-size: 22px; 
+        margin-right: 12px; 
+    }
+}
+
+/* --- 1. Large Laptops (1600px+) --- */
+@media screen and (min-width: 1600px) {
+    .report-editor-textarea {
+        font-size: 16px;
+        padding: 20px;
+    }
+    
+    .report-actions-bar-bottom {
+        padding: 18px 0;
+    }
+
+    .save-button, .cancel-button {
+        font-size: 16px;
+        padding: 8px 16px;
+    }
+}
+
+/* --- 2. High-Res Monitors / QHD (1920px+) --- */
+@media screen and (min-width: 1920px) {
+    .report-editor-textarea {
+        font-size: 18px;
+        padding: 25px;
+        line-height: 1.6;
+    }
+
+    .report-actions-bar-bottom {
+        padding: 24px 0;
+    }
+
+    .save-button, .cancel-button {
+        font-size: 18px;
+        padding: 10px 20px;
+        gap: 12px;
+    }
+
+    .save-icon-image {
+        width: 24px;
+        height: 24px;
+    }
+}
+
+/* --- 3. Ultra-Wide / 4K Desktop (2100px+) --- */
+@media screen and (min-width: 2100px) {
+    .report-editor-textarea {
+        font-size: 22px;
+        padding: 30px;
+    }
+
+    .report-actions-bar-bottom {
+        padding: 30px 0;
+    }
+
+    .save-button, .cancel-button {
+        font-size: 22px;
+        padding: 14px 28px;
+    }
+
+    .save-icon-image {
+        width: 28px;
+        height: 28px;
+    }
+}
+
+/* --- 4. Projector / Massive Displays (2500px+) --- */
+@media screen and (min-width: 2500px) {
+    .report-editor-textarea {
+        font-size: 26px; /* High visibility for editing during presentations */
+        padding: 40px;
+        border-width: 2px;
+    }
+
+    .report-actions-bar-bottom {
+        padding: 40px 0;
+        border-top-width: 2px;
+    }
+
+    .save-button, .cancel-button {
+        font-size: 26px;
+        padding: 18px 40px;
+        border-radius: 8px;
+    }
+
+    .save-icon-image {
+        width: 32px;
+        height: 32px;
+    }
+}

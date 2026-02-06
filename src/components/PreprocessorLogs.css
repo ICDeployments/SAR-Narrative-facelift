@@ -1,0 +1,158 @@
+/* --- Variables for consistent styling --- */
+:root {
+    --green-color: #4caf50; /* The specific bright green */
+    --light-green-bg: #f1fff1; /* Background color for the Preprocessor block */
+    --text-color-primary: #1f2937; /* Equivalent to text-gray-800 */
+    --text-color-secondary: #4b5563; /* Equivalent to text-gray-700 */
+    --text-color-light: #6b7280; /* Equivalent to text-gray-600 */
+    --progress-bar-bg: #e5e7eb; /* Equivalent to bg-gray-200 */
+    --font-family-primary: 'Inter', sans-serif;
+}
+
+/* --- Keyframe Animation for Log Items --- */
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(5px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+/* --- 1. Main Container (Replacing panelStyle) --- */
+.preprocessor-panel {
+    /* p-6 */
+    padding: 1.5rem; 
+    /* bg-white */
+    background-color: white; 
+    /* rounded-xl */
+    border-radius: 0.75rem; 
+    /* shadow-lg */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); 
+    /* border border-gray-100 */
+    border: 1px solid #f3f4f6; 
+    /* max-w-lg mx-auto */
+    max-width: 32rem; /* 512px */
+    margin-left: auto;
+    margin-right: auto;
+    font-family: var(--font-family-primary); /* Apply a clean default font */
+}
+
+/* --- Preprocessor Panel Scaling --- */
+
+@media screen and (min-width: 1440px) {
+    .preprocessor-panel {
+        max-width: 40rem; /* Grows to 640px */
+        padding: 2rem;
+        border-radius: 1rem;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    .preprocessor-panel {
+        max-width: 50rem; /* Grows to 800px */
+        padding: 3rem;
+        border-radius: 1.5rem;
+        border-width: 2px; /* Makes the edge more defined on 4K */
+    }
+}
+
+@media screen and (min-width: 2100px) {
+    .preprocessor-panel {
+        max-width: 60rem; /* Grows to 960px */
+        padding: 3.5rem;
+    }
+}
+
+/* --- Projector / Ultra-Wide Scaling (2500px+) --- */
+@media screen and (min-width: 2500px) {
+    .preprocessor-panel {
+        /* On a 2500px screen, 1000px-1200px is a comfortable reading width */
+        max-width: 75rem; 
+        padding: 5rem;
+        border-radius: 2.5rem;
+        border-width: 3px;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); /* Stronger shadow for projector depth */
+    }
+}
+
+.status-header {
+    /* flex justify-between items-center mb-1 */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.25rem;
+}
+
+.status-header span {
+    /* text-base font-semibold text-gray-700 */
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-color-secondary);
+}
+
+/* Progress Bar Track */
+.progress-track {
+    /* h-2 bg-gray-200 rounded-full overflow-hidden */
+    height: 0.5rem;
+    background-color: var(--progress-bar-bg);
+    border-radius: 9999px; /* rounded-full */
+    overflow: hidden;
+}
+
+/* Progress Bar Filler */
+.progress-filler {
+    /* h-full rounded-full transition-all duration-500 */
+    height: 100%;
+    /* border-radius: 9999px; rounded-full */
+    /* The width and background color are set dynamically in React */
+    background-color: rgb(32, 238, 32);
+    transition: width 1000ms linear; /* Matching the 1000ms React inline style */
+}
+
+/* --- 3. Agent Activity Block (Green Box) --- */
+.agent-activity-block {
+    border-radius: 0.5rem;
+    background-color: #DFFFDC
+    
+}
+
+.agent-activity-block h3 {
+    /* text-lg font-bold text-gray-800 mb-1 */
+    font-size: 17px;
+    font-weight: 500;
+    color: #000048;
+    margin-bottom: 0.25rem;
+    padding: 2px 15px;
+}
+
+.agent-activity-block p {
+    /* text-sm text-gray-600 */
+    font-size: 15px;
+    color: var(--text-color-light);
+     padding: 0px 15px;
+}
+
+/* --- 4. Live Commentary/Log Stream (Bulleted List) --- */
+.log-stream-container {
+    /* mt-6 */
+    margin-top: 1.5rem;
+    min-height: 100px;
+    
+}
+
+.log-list {
+    /* list-disc pl-5 text-sm text-gray-700 space-y-2 */
+    list-style-type: disc;
+    padding-left: 1.25rem; /* pl-5 (20px) */
+    font-size: 0.875rem; /* text-sm */
+    color: var(--text-color-secondary); /* text-gray-700 */
+    margin-top: 0;
+}
+
+/* Adjustments for space-y-2 (Applies margin between list items) */
+.log-list > li:not(:last-child) {
+    margin-bottom: 0.5rem; /* space-y-2 */
+}
